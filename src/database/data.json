@@ -1,0 +1,21 @@
+[
+	{
+		"id": 1,
+		"nombre": "Televisor",
+		"descripcion": "Led 32 pulgadas",
+		"precio": "30000"
+	},
+	{
+		"id": 2,
+		"nombre": "Mouse",
+		"descripcion": "Inalambrico",
+		"precio": "3000"
+	},
+	{
+		"id": 3,
+		"nombre": "Teclado",
+		"descripcion": "Inalambrico",
+		"precio": "3500"
+	}
+
+]
