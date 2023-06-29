@@ -21,7 +21,7 @@ server.get('/productos/:id', (req, res) => {
     const { id } = req.params;
 
     findOneById(Number(id))
-        .then((coche) => res.status(200).send(coche))
+        .then((producto) => res.status(200).send(producto))
         .catch((error) => res.status(400).send(error.message));
 });
 

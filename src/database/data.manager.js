@@ -27,9 +27,7 @@ function generarId(productos) {
     let mayorId = 0;
 
     productos.forEach((producto) => {
-        if (Number(producto.id) > mayorId) {
-            mayorId = Number(producto.id);
-        }
+        if (Number(producto.id) > mayorId)  mayorId = Number(producto.id);
     });
 
     return mayorId + 1;
@@ -41,7 +39,7 @@ async function findOneById(id) {
     const productos = await leer();
     const producto  = productos.find((element) => element.id === id);
 
-    if (!producto) throw new Error("Error. El Id no corresponde a un producto en existencia.");
+    if (!producto) throw new Error("Error. El Id no corresponde a un producto existente.");
 
     return producto;
 }
@@ -52,26 +50,26 @@ async function findAll() {
 }
 
 async function create(producto) {
-    if (!producto?.nombre || !producto?.descripcion || !producto?.precio) throw new Error("Error. Datos incompletos.");
+    if (!producto?.nombre || !producto?.descripcion || !producto?.precio) throw new Error("Error. Datos Insuficientes.");
 
     let productos = await leer();
     const productoConId = { id: generarId(productos), ...producto };
 
-    coches.push(productoConId);
+    productos.push(productoConId);
     await escribir(productos);
 
     return productoConId;
 }
 
 async function update(producto) {
-    if (!producto?.nombre || !producto?.descripcion || !producto?.precio) throw new Error("Error. Datos incompletos.");
+    if (!producto?.nombre || !producto?.descripcion || !producto?.precio) throw new Error("Error. Datos Insuficientes.");
 
     let productos   = await leer();
     const indice = productos.findIndex((element) => element.id === producto.id);
 
-    if (indice < 0) throw new Error("Error. El Id no corresponde a un producto en existencia.");
+    if (indice < 0) throw new Error("Error. El Id no corresponde a un producto existente.");
 
-    coches[indice] = producto;
+    productos[indice] = producto;
     await escribir(productos);
 
     return productos[indice];
@@ -83,9 +81,9 @@ async function destroy(id) {
     let productos   = await leer();
     const indice = productos.findIndex((element) => element.id === id);
 
-    if (indice < 0) throw new Error("Error. El Id no corresponde a un producto en existencia.");
+    if (indice < 0) throw new Error("Error. El Id no corresponde a un producto existente.");
 
-    const coche = productos[indice];
+    const producto = productos[indice];
     productos.splice(indice, 1);
     await escribir(productos);
 

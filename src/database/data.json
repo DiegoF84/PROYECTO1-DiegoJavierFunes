@@ -3,7 +3,7 @@
 		"id": 1,
 		"nombre": "Televisor",
 		"descripcion": "Led 32 pulgadas",
-		"precio": "30000"
+		"precio": "10000"
 	},
 	{
 		"id": 2,
@@ -16,6 +16,17 @@
 		"nombre": "Teclado",
 		"descripcion": "Inalambrico",
 		"precio": "3500"
+	},
+	{
+		"id": 4,
+		"nombre": "camara",
+		"descripcion": "web ",
+		"precio": "1000"
+	},
+	{
+		"id": 5,
+		"nombre": "Monitor",
+		"descripcion": "LG 19 pulgadas",
+		"precio": "12000"
 	}
-
 ]
